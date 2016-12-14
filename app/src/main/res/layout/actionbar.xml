@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryLight">
+    <ImageView
+        android:id="@+id/actionbar_back_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/actionbar_back"/>
+    <TextView
+        android:id="@+id/actionbar_title_tv"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="XXX"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:layout_weight="1"
+        android:gravity="center"/>
+    <ImageView
+        android:id="@+id/actionbar_menu_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:padding="5dp"
+        android:src="@drawable/actionbar_menu"/>
+
+
+</LinearLayout>

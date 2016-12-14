@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/activity_guide_skip_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="skip"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+        android:layout_marginBottom="30dp">
+        <ImageView
+            android:id="@+id/activity_guide_circle_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shape_guide_circle_red"
+            android:layout_toLeftOf="@+id/activity_guide_circle_iv2"
+            android:layout_marginRight="10dp"
+
+            />
+        <ImageView
+            android:id="@+id/activity_guide_circle_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shape_guide_circle_gray"
+            android:layout_centerHorizontal="true"
+            />
+        <ImageView
+            android:id="@+id/activity_guide_circle_iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shape_guide_circle_gray"
+            android:layout_toRightOf="@id/activity_guide_circle_iv2"
+            android:layout_marginLeft="10dp"
+            />
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/activity_guide_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

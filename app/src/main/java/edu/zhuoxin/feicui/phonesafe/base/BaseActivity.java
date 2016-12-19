@@ -15,10 +15,10 @@ import edu.zhuoxin.feicui.phonesafe.R;
  */
 
 public class BaseActivity extends AppCompatActivity{
-    ActionBar actionBar;
-    ImageView back;
-    ImageView menu;
-    TextView title;
+    protected ActionBar actionBar;
+    protected ImageView back;
+    protected ImageView menu;
+    protected TextView title;
     /**开启一个activity*/
     public void startActivity(Class targetClass){
         Intent intent = new Intent(this,targetClass);

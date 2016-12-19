@@ -21,6 +21,8 @@ public class WelcomeActivity extends BaseActivity implements Animation.Animation
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         initActionBar(false,false,"手机管家",null);
+        //隐藏actionbar
+        actionBar.hide();
         logo = (ImageView) findViewById(R.id.activity_welcome_iv);
         anim = AnimationUtils.loadAnimation(this,R.anim.animation_welcome_alpha);
         //设置动画停留在结束位置

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="@color/colorGray">
+        <TextView
+            android:id="@+id/dialog_telnumber_message_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="是否确定拨打该电话"
+            android:layout_margin="20dp"
+            android:textSize="16sp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/textView"
+                android:layout_marginTop="50dp"/>
+
+            <TextView
+                android:id="@+id/dialog_telnumber_cancle_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CANCLE"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:layout_marginTop="60dp"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:layout_marginRight="40dp"/>
+            <TextView
+                android:id="@+id/dialog_telnumber_confirm_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:layout_marginTop="60dp"
+                android:layout_weight="1"
+                android:padding="10dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

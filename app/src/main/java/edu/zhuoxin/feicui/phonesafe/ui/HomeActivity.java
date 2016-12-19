@@ -43,7 +43,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.activity_home_telnumber_tv :
-                startActivity(TelNumberActivity.class);
+                startActivity(TelClassListActivity.class);
                 break;
             case R.id.activity_home_software_tv :
                 break;
@@ -52,6 +52,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
             case R.id.activity_home_rocket_tv :
                 break;
             case R.id.activity_home_phone_tv :
+                startActivity(PhoneActivity.class);
                 break;
             case R.id.activity_home_filemgr_tv :
                 break;

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.zhuoxin.feicui.phonesafe.R;
+import edu.zhuoxin.feicui.phonesafe.adapter.SoftWareAdapter;
 import edu.zhuoxin.feicui.phonesafe.base.BaseActivity;
 import edu.zhuoxin.feicui.phonesafe.entity.SoftWareInfo;
 
@@ -26,6 +27,7 @@ public class SoftManager extends BaseActivity implements View.OnClickListener {
     private ListView lv ;
     private ProgressBar pb;
     private List<SoftWareInfo> data = new ArrayList<>();
+    private SoftWareAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -72,7 +74,7 @@ public class SoftManager extends BaseActivity implements View.OnClickListener {
                 //图标
                 Drawable icon = info.loadIcon(getPackageManager());
 
-                SoftWareInfo soft = new SoftWareInfo(label,icon,packageName,version,false,true);
+                SoftWareInfo soft = new SoftWareInfo(label,icon,packageName,version,false,isSystem);
                 //添加到集合
                 if (softType.equals("sys")){ //存系统应用
                     if (isSystem){
@@ -97,6 +99,10 @@ public class SoftManager extends BaseActivity implements View.OnClickListener {
                     pb.setVisibility(View.GONE);
                     lv.setVisibility(View.VISIBLE);
                     //添加适配器
+                    adapter = new SoftWareAdapter(SoftManager.this);
+                    adapter.setData(data);
+
+
 
                 }
             });

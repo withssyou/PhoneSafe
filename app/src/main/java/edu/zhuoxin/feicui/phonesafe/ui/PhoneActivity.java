@@ -101,10 +101,7 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
         reso_camera = (TextView) findViewById(R.id.activity_phone_camera_tv);
         baseband = (TextView) findViewById(R.id.activity_phone_root_name_tv);
         root = (TextView) findViewById(R.id.activity_phone_root_tv);
-
-
     }
-
     //获取数据
     private void initData() {
         String name = Build.BRAND;
@@ -128,10 +125,6 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
         mem_free.setText("可用内存:"+avialMem);
         reso_phone.setText("屏幕分辨率:"+screenRes);
         reso_camera.setText("相机分辨率:"+cameraRes);
-
-
-
-
     }
     /**判断是否root*/
     private boolean checkIsRoot() {

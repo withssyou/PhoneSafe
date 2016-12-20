@@ -6,8 +6,10 @@ import android.widget.TextView;
 import edu.zhuoxin.feicui.phonesafe.R;
 import edu.zhuoxin.feicui.phonesafe.base.BaseActivity;
 
-public class HomeActivity extends BaseActivity implements View.OnClickListener{
-    /**电话助手*/
+public class HomeActivity extends BaseActivity implements View.OnClickListener {
+    /**
+     * 电话助手
+     */
     private TextView telnumber;
     private TextView software;
     private TextView clean;
@@ -20,7 +22,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         //初始化actionBar
-        initActionBar(false,true,"手机管家",this);
+        initActionBar(false, true, "手机管家", this);
         initUI();
     }
 
@@ -39,22 +41,24 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener{
         phone.setOnClickListener(this);
         filemgr.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.activity_home_telnumber_tv :
+        switch (view.getId()) {
+            case R.id.activity_home_telnumber_tv:
                 startActivity(TelClassListActivity.class);
                 break;
-            case R.id.activity_home_software_tv :
+            case R.id.activity_home_software_tv:
+                startActivity(SoftWareActivity.class);
                 break;
-            case R.id.activity_home_clean_tv :
+            case R.id.activity_home_clean_tv:
                 break;
-            case R.id.activity_home_rocket_tv :
+            case R.id.activity_home_rocket_tv:
                 break;
-            case R.id.activity_home_phone_tv :
+            case R.id.activity_home_phone_tv:
                 startActivity(PhoneActivity.class);
                 break;
-            case R.id.activity_home_filemgr_tv :
+            case R.id.activity_home_filemgr_tv:
                 break;
             case R.id.actionbar_menu_iv:
                 startActivity(SettingActivity.class);

@@ -14,6 +14,7 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,19 +32,30 @@ import edu.zhuoxin.feicui.phonesafe.biz.MemeryManager;
 
 /**
  * Created by Administrator on 2016/12/16.
+ *  手机状态页面
  */
 public class PhoneActivity extends BaseActivity implements View.OnClickListener {
     private ProgressBar battery; //电池pb
     private TextView battery_info;//电池tv
     private BroadcastReceiver receiver;
     private int temperature;
+    private TextView phone_name;
+    private TextView phone_version;
+    private TextView cpu_name;
+    private TextView cpu_num;
+    private TextView mem_total;
+    private TextView mem_free;
+    private TextView reso_phone;
+    private TextView reso_camera;
+    private TextView baseband;
+    private TextView root;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone);
-
-        initData();
+        initActionBar(true,false,"手机管理",this);
         initUI();
+        initData();
         initBattery();
 
     }
@@ -79,12 +91,23 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
         battery = (ProgressBar) findViewById(R.id.activity_phone_battery_pb);
         battery_info = (TextView) findViewById(R.id.activity_phone_battery_show_tv);
         battery.setOnClickListener(this);
+        phone_name = (TextView) findViewById(R.id.activity_phone_version_name_tv);
+        phone_version = (TextView) findViewById(R.id.activity_phone_version_tv);
+        cpu_name = (TextView) findViewById(R.id.activity_phone_cpu_name_tv);
+        cpu_num = (TextView) findViewById(R.id.activity_phone_cpu_tv);
+        mem_total = (TextView) findViewById(R.id.activity_phone_space_name_tv);
+        mem_free = (TextView) findViewById(R.id.activity_phone_space_tv);
+        reso_phone = (TextView) findViewById(R.id.activity_phone_camera_name_tv);
+        reso_camera = (TextView) findViewById(R.id.activity_phone_camera_tv);
+        baseband = (TextView) findViewById(R.id.activity_phone_root_name_tv);
+        root = (TextView) findViewById(R.id.activity_phone_root_tv);
+
 
     }
 
     //获取数据
     private void initData() {
-        String name = Build.BOARD;
+        String name = Build.BRAND;
         String version = Build.VERSION.RELEASE;
         String base_band = Build.VERSION.INCREMENTAL;
         String cpu  = getCPUtype();
@@ -95,8 +118,22 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
         String screenRes = getScreenResolution();
         String cameraRes = getCameraResolution();
 
-    }
+        phone_name.setText("手机品牌:"+name);
+        phone_version.setText("系统版本:"+version);
+        baseband.setText("基带版本:"+base_band);
+        cpu_name.setText("CPU型号:"+cpu);
+        cpu_num.setText("CPU个数:"+num+"");
+        root.setText("是否root:"+isRoot+"");
+        mem_total.setText("总内存:"+totalMem);
+        mem_free.setText("可用内存:"+avialMem);
+        reso_phone.setText("屏幕分辨率:"+screenRes);
+        reso_camera.setText("相机分辨率:"+cameraRes);
 
+
+
+
+    }
+    /**判断是否root*/
     private boolean checkIsRoot() {
         String path1 = "/system/bin/su";
         String path2 = "/system/xbin/su";
@@ -107,9 +144,8 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
             isRoot = false;
         }
         return  isRoot;
-
     }
-
+    /**获取cup型号*/
     public String getCPUtype() {
         String path = "/proc/cpuinfo";
         String type = "";
@@ -137,7 +173,7 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
         }
         return null;
     }
-
+    /**获取cup数*/
     public int getCPUnumber() {
         String path = "/proc/cpuinfo";
         String str = "";
@@ -210,6 +246,13 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this,temperature+"",Toast.LENGTH_LONG).show();
+        switch (v.getId()){
+            case R.id.actionbar_back_iv:
+                finish();
+                break;
+            case R.id.activity_phone_battery_pb:
+
+                break;
+        }
     }
 }

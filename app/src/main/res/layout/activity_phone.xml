@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:orientation="horizontal">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
-
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:orientation="horizontal">
 
         <ProgressBar
@@ -15,9 +15,9 @@
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:max="100"
             android:progress="50"
@@ -27,7 +27,6 @@
             android:layout_width="10dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginRight="10dp"
             android:background="@color/colorGreen" />
 
         <TextView
@@ -39,4 +38,152 @@
             android:text="100%"
             android:textSize="20sp" />
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:id="@+id/activity_phone_version_iv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/setting_info_icon_cpu"/>
+        <TextView
+            android:id="@+id/activity_phone_version_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/activity_phone_version_iv"
+            android:layout_alignTop="@+id/activity_phone_version_iv"
+            android:text="手机品牌:meizu"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/activity_phone_version_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/activity_phone_version_iv"
+            android:layout_alignBottom="@+id/activity_phone_version_iv"
+            android:text="系统版本:5.0.1.0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp">
+        <ImageView
+            android:id="@+id/activity_phone_cpu_iv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/setting_info_icon_version"/>
+        <TextView
+            android:id="@+id/activity_phone_cpu_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/activity_phone_cpu_iv"
+            android:layout_alignTop="@+id/activity_phone_cpu_iv"
+            android:text="手机品牌:meizu"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/activity_phone_cpu_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/activity_phone_cpu_iv"
+            android:layout_alignBottom="@+id/activity_phone_cpu_iv"
+            android:text="系统版本:5.0.1.0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp">
+        <ImageView
+            android:id="@+id/activity_phone_space_iv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/setting_info_icon_space"/>
+        <TextView
+            android:id="@+id/activity_phone_space_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/activity_phone_space_iv"
+            android:layout_alignTop="@+id/activity_phone_space_iv"
+            android:text="手机品牌:meizu"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/activity_phone_space_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/activity_phone_space_iv"
+            android:layout_alignBottom="@+id/activity_phone_space_iv"
+            android:text="系统版本:5.0.1.0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+    android:id="@+id/fourth"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp">
+    <ImageView
+        android:id="@+id/activity_phone_camera_iv"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/setting_info_icon_camera"/>
+    <TextView
+        android:id="@+id/activity_phone_camera_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/activity_phone_camera_iv"
+        android:layout_alignTop="@+id/activity_phone_camera_iv"
+        android:text="手机品牌:meizu"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/activity_phone_camera_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/activity_phone_camera_iv"
+        android:layout_alignBottom="@+id/activity_phone_camera_iv"
+        android:text="系统版本:5.0.1.0"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"/>
+</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/fifth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp">
+        <ImageView
+            android:id="@+id/activity_phone_root_iv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/setting_info_icon_root"/>
+        <TextView
+            android:id="@+id/activity_phone_root_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/activity_phone_root_iv"
+            android:layout_alignTop="@+id/activity_phone_root_iv"
+            android:text="手机品牌:meizu"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:id="@+id/activity_phone_root_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/activity_phone_root_iv"
+            android:layout_alignBottom="@+id/activity_phone_root_iv"
+            android:text="系统版本:5.0.1.0"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="15dp"/>
+    </RelativeLayout>
+
+
 </LinearLayout>

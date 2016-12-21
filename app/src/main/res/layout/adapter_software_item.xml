@@ -1,24 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="5dp">
     <CheckBox
         android:id="@+id/adapter_software_item_cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:layout_centerVertical="true"/>
     <ImageView
-        android:id="@+id/"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/adapter_software_item_icon_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@mipmap/ic_launcher"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/adapter_software_item_cb"
-        android:layout_marginLeft="5dp"/>
+        android:layout_toRightOf="@+id/adapter_software_item_cb" />
     <TextView
+        android:id="@+id/adapter_software_item_label_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="day05"
-        android:layout_toRightOf="@+id/"/>
+        android:textSize="16sp"
+        android:maxLength="16"
+        android:layout_toRightOf="@+id/adapter_software_item_icon_iv"
+        android:layout_alignTop="@+id/adapter_software_item_icon_iv"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/adapter_software_item_packageName_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="day05"
+        android:textSize="12sp"
+        android:layout_toRightOf="@+id/adapter_software_item_icon_iv"
+        android:layout_alignBottom="@+id/adapter_software_item_icon_iv"
+        android:layout_marginLeft="5dp" />
+    <TextView
+        android:id="@+id/adapter_software_item_version_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="day05"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp" />
 
 </RelativeLayout>

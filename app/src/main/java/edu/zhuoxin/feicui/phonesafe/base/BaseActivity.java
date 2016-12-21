@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import edu.zhuoxin.feicui.phonesafe.R;
 
@@ -59,5 +60,11 @@ public class BaseActivity extends AppCompatActivity{
         //设置监听事件
         back.setOnClickListener(listener);
         menu.setOnClickListener(listener);
+    }
+    public void toastLong(String msg){
+        Toast.makeText(this,msg,Toast.LENGTH_LONG).show();
+    }
+    public void toastShort(String msg){
+        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
     }
 }

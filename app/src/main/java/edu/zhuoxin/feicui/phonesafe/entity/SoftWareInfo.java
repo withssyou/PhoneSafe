@@ -12,16 +12,16 @@ public class SoftWareInfo {
     private String packageName; //应用包名
     private String version; //版本号
     private boolean isCheck ; //是否选中
-    private boolean isDelete; //能否删除
+    private boolean canDelete; //能否删除
 
     public SoftWareInfo(String label, Drawable icon, String packageName,
-                        String version, boolean isCheck, boolean isDelete) {
+                        String version, boolean isCheck, boolean canDelete) {
         this.label = label;
         this.icon = icon;
         this.packageName = packageName;
         this.version = version;
         this.isCheck = isCheck;
-        this.isDelete = isDelete;
+        this.canDelete = canDelete;
     }
 
     public String getLabel() {
@@ -44,12 +44,12 @@ public class SoftWareInfo {
         return isCheck;
     }
 
-    public boolean isDelete() {
-        return isDelete;
+    public boolean canDelete() {
+        return canDelete;
     }
 
     public void setDelete(boolean delete) {
-        isDelete = delete;
+        canDelete = delete;
     }
 
     public void setCheck(boolean check) {
@@ -64,7 +64,7 @@ public class SoftWareInfo {
                 ", packageName='" + packageName + '\'' +
                 ", version='" + version + '\'' +
                 ", isCheck=" + isCheck +
-                ", isDelete=" + isDelete +
+                ", isDelete=" + canDelete +
                 '}';
     }
 }

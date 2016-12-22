@@ -7,9 +7,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="20dp">
-
+        <include layout="@layout/includ_software"/>
     </LinearLayout>
 
     <ProgressBar

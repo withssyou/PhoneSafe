@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <edu.zhuoxin.feicui.phonesafe.view.SectorView
+        android:id="@+id/includ_software_sv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        custom:backgroundColorSector="@color/colorPrimary"
+        custom:progressColorSector="@color/colorAccent"
+        custom:endAngle="35"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="  已用存储空间"
+            android:textColor="#888888"
+            android:button="@drawable/shape_includ_software_total"
+            android:textSize="16sp"
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:text="  可用存储空间"
+            android:textSize="16sp"
+            android:textColor="#888888"
+            android:button="@drawable/shape_includ_software_use"
+            android:clickable="false"
+            />
+    </LinearLayout>
+
+</LinearLayout>

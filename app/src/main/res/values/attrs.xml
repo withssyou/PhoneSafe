@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="backgroundColorSector" format="color"/>
+    <attr name="progressColorSector" format="color"/>
+    <attr name="endAngle" format="integer"/>
+    <declare-styleable name="SectorView">
+        <attr name="backgroundColorSector"/>
+        <attr name="progressColorSector"/>
+        <attr name="endAngle"/>
+    </declare-styleable>
+        
+</resources>

@@ -6,16 +6,31 @@
     android:layout_height="match_parent"
     tools:context="edu.zhuoxin.feicui.phonesafe.ui.HomeActivity"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+        <edu.zhuoxin.feicui.phonesafe.view.CircleView
+            android:id="@+id/activity_home_circle_cv"
+            android:layout_width="205dp"
+            android:layout_height="205dp"
+            android:layout_centerInParent="true"/>
         <ImageView
+            android:id="@+id/activity_home_circle_iv"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:src="@drawable/clean_circle_normal"
             android:layout_centerInParent="true"/>
+        <TextView
+            android:id="@+id/activity_home_circle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="0%"
+            android:textSize="30sp"/>
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="30dp"

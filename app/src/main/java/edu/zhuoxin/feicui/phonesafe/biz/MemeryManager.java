@@ -2,6 +2,7 @@ package edu.zhuoxin.feicui.phonesafe.biz;
 
 import android.app.ActivityManager;
 import android.content.Context;
+import android.os.Environment;
 import android.text.format.Formatter;
 
 /**
@@ -35,5 +36,16 @@ public class MemeryManager {
     /**内存大小格式化*/
     public static String getFamaterMem(Context context,long l){
         return Formatter.formatFileSize(context,l);
+    }
+    /**获取外置sd卡的根路径*/
+    public static  String getSDstoragePath(){
+       String state =  Environment.getExternalStorageState();
+            //内存卡挂载
+        if (!state.equals(Environment.MEDIA_MOUNTED)){
+            return  null;
+        }else {
+           return  Environment.getExternalStorageDirectory().getPath();
+        }
+
     }
 }

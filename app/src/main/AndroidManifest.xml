@@ -20,7 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.GuideActivity">
-
         </activity>
         <activity android:name=".ui.DemoActivity">
         </activity>
@@ -28,12 +27,18 @@
         </activity>
         <activity android:name=".ui.WelcomeActivity">
         </activity>
-        <activity android:name=".ui.SettingActivity"></activity>
-        <activity android:name=".ui.TelNumberActivity"></activity>
+        <activity android:name=".ui.SettingActivity">
+        </activity>
+        <activity android:name=".ui.TelNumberActivity">
+        </activity>
         <activity android:name=".ui.PhoneActivity">
         </activity>
-        <activity android:name=".ui.SoftManager"></activity>
-        <activity android:name=".ui.SoftWareActivity"></activity>
+        <activity android:name=".ui.SoftManager">
+        </activity>
+        <activity android:name=".ui.SoftWareActivity">
+        </activity>
+        <activity android:name=".ui.CleanActivity">
+        </activity>
 
     </application>
 

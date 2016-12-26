@@ -39,6 +39,8 @@
         </activity>
         <activity android:name=".ui.CleanActivity">
         </activity>
+        <activity android:name=".ui.RocketActivity">
+        </activity>
 
     </application>
 

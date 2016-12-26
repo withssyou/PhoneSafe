@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    <CheckBox
+        android:id="@+id/adapter_process_item_ischeck_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="10dp"/>
+    <ImageView
+        android:id="@+id/adapter_process_item_icon_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+
+        android:layout_toRightOf="@+id/adapter_process_item_ischeck_cb"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/adapter_process_item_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/adapter_process_item_icon_iv"
+        android:text="豌豆荚"
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/adapter_process_item_icon_iv"
+        android:layout_marginLeft="20dp" />
+    <TextView
+        android:id="@+id/adapter_process_item_pname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/adapter_process_item_icon_iv"
+        android:text="edu.feicui.zhuoxin"
+        android:layout_alignBottom="@+id/adapter_process_item_icon_iv"
+        android:layout_marginLeft="20dp" />
+
+</RelativeLayout>

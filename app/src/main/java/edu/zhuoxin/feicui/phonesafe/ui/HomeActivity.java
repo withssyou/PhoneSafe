@@ -16,6 +16,7 @@ import java.util.TimerTask;
 
 import edu.zhuoxin.feicui.phonesafe.R;
 import edu.zhuoxin.feicui.phonesafe.base.BaseActivity;
+import edu.zhuoxin.feicui.phonesafe.biz.MemeryManager;
 import edu.zhuoxin.feicui.phonesafe.view.CircleView;
 
 public class HomeActivity extends BaseActivity implements View.OnClickListener {
@@ -32,17 +33,6 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     private ImageView iv_circle;
     private TextView tv_circle;
     private int count;
-//    private Handler handler = new Handler(){
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            if (msg.what == 0x10){
-//                int num = (int) msg.obj;
-//                tv_circle.setText(num+"%");
-//            }
-//
-//        }
-//    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,32 +53,8 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         tv_circle = (TextView) findViewById(R.id.activity_home_circle_tv);
         cv_circle = (CircleView) findViewById(R.id.activity_home_circle_cv);
         iv_circle = (ImageView) findViewById(R.id.activity_home_circle_iv);
-        //设置假数据
-//        tv_circle.setText("40%");
 
-        final Timer timer  = new Timer();
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                if (count <=49){
-                    count += 1;
-//                    Message message = Message.obtain();
-//                    message.what = 0x10;
-//                    message.obj = count;
-//                    handler.sendMessageDelayed(message,500);
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            tv_circle.setText(count+"%");
-                        }
-                    });
-                }else {
-                    timer.cancel();
-                }
-            }
-        };
-        timer.schedule(task,400,20);
-        cv_circle.setAngle(180);
+       initCircle();
         iv_circle.setOnClickListener(this);
         //设置监听事件
         telnumber.setOnClickListener(this);
@@ -97,6 +63,36 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         rocket.setOnClickListener(this);
         phone.setOnClickListener(this);
         filemgr.setOnClickListener(this);
+    }
+
+    private void initCircle() {
+        long total = MemeryManager.getAllMemeray(this);
+        long free = MemeryManager.getAvailMemary(this);
+        //百分比
+        final int progress = (int)((total-free)*100f/total);
+        //角度
+        int angle = (int)((progress/100f)*360);
+        final Timer timer  = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                if (count <= progress){
+                    count++;
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            tv_circle.setText(count+"%");
+                        }
+                    });
+                }else {
+                    count = 0;
+                    timer.cancel();
+                }
+            }
+        };
+        timer.schedule(task,400,20);
+        cv_circle.setAngle(angle);
     }
 
     @Override
@@ -112,6 +108,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(CleanActivity.class);
                 break;
             case R.id.activity_home_rocket_tv:
+                startActivity(RocketActivity.class);
                 break;
             case R.id.activity_home_phone_tv:
                 startActivity(PhoneActivity.class);
@@ -122,7 +119,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(SettingActivity.class);
                 break;
             case R.id.activity_home_circle_iv:
-                cv_circle.setAngle(180);
+                initCircle();
                 break;
         }
     }

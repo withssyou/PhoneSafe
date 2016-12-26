@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.zhuoxin.feicui.phonesafe.R;
@@ -56,7 +57,11 @@ public class CleanActivity extends BaseActivity implements View.OnClickListener 
                     pbar.setVisibility(View.GONE);
                     ll.setVisibility(View.VISIBLE);
                     adapter.notifyDataSetChanged();
-                    sizeAll = 0;
+                }
+                //文件删除完毕后处理的消息
+                if (msg.what == 0x14){
+                    sizeAll -= msg.arg1;
+                    allFileSize.setText(Formatter.formatFileSize(CleanActivity.this,sizeAll));
                 }
             }
         }
@@ -137,15 +142,35 @@ public class CleanActivity extends BaseActivity implements View.OnClickListener 
                 break;
 
             case R.id.activity_clear_btn:
-                for (AppRubish rubish : adapter.getData()){
-                    if (rubish.ischeck()){
-                        //删除垃圾
-//                        toastShort(rubish.getFilePath());
-                        FileManager.deleteFile(rubish.getFile());
-                        adapter.getData().remove(rubish);
+                delete.setClickable(false);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        List<AppRubish> temp = new ArrayList<AppRubish>();
+                        for (AppRubish rubish : adapter.getData()){
+                            if (rubish.ischeck()){
+                                long size = FileManager.getFileSize(rubish.getFile());
+                                //删除垃圾
+                                FileManager.deleteFile(rubish.getFile());
+                                //将要删除的数据添加到临时集合里面
+                                temp.add(rubish);
+                                Message msg = handler.obtainMessage();
+                                msg.what = 0x14;
+                                msg.arg1 = (int)size;
+                                handler.sendMessage(msg);
+                            }
+                        }
+                        adapter.getData().removeAll(temp);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                adapter.notifyDataSetChanged();
+                                delete.setClickable(true);
+                            }
+                        });
                     }
-                }
-                asyncLoadData();
+                }).start();
+
                 break;
         }
 

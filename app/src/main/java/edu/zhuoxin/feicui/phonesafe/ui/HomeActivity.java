@@ -1,12 +1,6 @@
 package edu.zhuoxin.feicui.phonesafe.ui;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,7 +43,6 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         rocket = (TextView) findViewById(R.id.activity_home_rocket_tv);
         phone = (TextView) findViewById(R.id.activity_home_phone_tv);
         filemgr = (TextView) findViewById(R.id.activity_home_filemgr_tv);
-
         tv_circle = (TextView) findViewById(R.id.activity_home_circle_tv);
         cv_circle = (CircleView) findViewById(R.id.activity_home_circle_cv);
         iv_circle = (ImageView) findViewById(R.id.activity_home_circle_iv);
@@ -64,7 +57,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         phone.setOnClickListener(this);
         filemgr.setOnClickListener(this);
     }
-
+    /**初始化圆环数据*/
     private void initCircle() {
         long total = MemeryManager.getAllMemeray(this);
         long free = MemeryManager.getAvailMemary(this);
@@ -127,6 +120,5 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        unregisterReceiver(receiver);
     }
 }

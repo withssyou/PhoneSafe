@@ -27,4 +27,12 @@ public class ProcessManager {
 
         return list;
     }
+
+        /**杀死服务进程以下的进程*/
+    public static void killRunningProcess(Context context){
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo info : getRunningProcess(context)){
+            am.killBackgroundProcesses(info.processName);
+        }
+    }
 }

@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Created by Administrator on 2016/12/23.
  */
-public class RubbishInfo {
+public class FileInfo {
     private boolean isCheck;
     private File file;
     /**文件图标名*/
@@ -13,7 +13,7 @@ public class RubbishInfo {
     /**MiniType类型*/
     private String fileType;
 
-    public RubbishInfo(File file, String fileName, String fileType) {
+    public FileInfo(File file, String fileName, String fileType) {
         this.file = file;
         this.iconName = fileName;
         this.fileType = fileType;
@@ -37,7 +37,7 @@ public class RubbishInfo {
 
     @Override
     public String toString() {
-        return "RubbishInfo{" +
+        return "FileInfo{" +
                 "isCheck=" + isCheck +
                 ", file=" + file +
                 ", iconName='" + iconName + '\'' +

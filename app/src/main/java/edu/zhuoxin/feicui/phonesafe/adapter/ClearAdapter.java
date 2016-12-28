@@ -9,12 +9,10 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.File;
-
 import edu.zhuoxin.feicui.phonesafe.R;
 import edu.zhuoxin.feicui.phonesafe.base.BaseBaseAdapter;
 import edu.zhuoxin.feicui.phonesafe.entity.AppRubish;
-import edu.zhuoxin.feicui.phonesafe.entity.RubbishInfo;
+import edu.zhuoxin.feicui.phonesafe.entity.FileInfo;
 import edu.zhuoxin.feicui.phonesafe.utils.FileTypeUtil;
 
 /**
@@ -63,7 +61,7 @@ public class ClearAdapter extends BaseBaseAdapter<AppRubish>{
         return convertView;
     }
     /**将文件转换为图片*/
-    private Bitmap getBitmap(RubbishInfo info){
+    private Bitmap getBitmap(FileInfo info){
         Bitmap bitmap = null;
         if (info.getFileType().equals(FileTypeUtil.TYPE_IMAGE)){
             //如果是图片，进行图片压缩（图片的二次采样）

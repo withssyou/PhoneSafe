@@ -11,6 +11,8 @@ import java.util.TimerTask;
 import edu.zhuoxin.feicui.phonesafe.R;
 import edu.zhuoxin.feicui.phonesafe.base.BaseActivity;
 import edu.zhuoxin.feicui.phonesafe.biz.MemeryManager;
+import edu.zhuoxin.feicui.phonesafe.biz.ProcessManager;
+import edu.zhuoxin.feicui.phonesafe.entity.ProcessInfo;
 import edu.zhuoxin.feicui.phonesafe.view.CircleView;
 
 public class HomeActivity extends BaseActivity implements View.OnClickListener {
@@ -34,6 +36,20 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         //初始化actionBar
         initActionBar(false, true, "手机管家", this);
         initUI();
+//        initCircle();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initCircle();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
     }
 
     private void initUI() {
@@ -107,11 +123,13 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(PhoneActivity.class);
                 break;
             case R.id.activity_home_filemgr_tv:
+                startActivity(FileActivity.class);
                 break;
             case R.id.actionbar_menu_iv:
                 startActivity(SettingActivity.class);
                 break;
             case R.id.activity_home_circle_iv:
+                ProcessManager.killRunningProcess(this);
                 initCircle();
                 break;
         }

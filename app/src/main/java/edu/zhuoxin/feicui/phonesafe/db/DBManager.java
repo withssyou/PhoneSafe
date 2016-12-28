@@ -133,6 +133,7 @@ public class DBManager {
         if (file.exists()) {
             SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(file, null);
             Cursor cursor = db.query("softdetail", null, null, null, null, null, null);
+
             if (cursor != null) {
                 AppRubish rubish = null;
                 while (cursor.moveToNext()) {

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/activity_file_size_tv"
+            android:layout_alignBottom="@+id/activity_file_size_tv"
+            android:text="已发现  " />
+
+        <TextView
+            android:id="@+id/activity_file_size_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="0MB"
+            android:textSize="30sp"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ProgressBar
+            android:id="@+id/activity_file_pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/activity_file_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/item_arrow_right"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

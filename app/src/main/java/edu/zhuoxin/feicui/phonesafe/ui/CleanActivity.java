@@ -33,7 +33,7 @@ import edu.zhuoxin.feicui.phonesafe.entity.AppRubish;
  */
 public class CleanActivity extends BaseActivity implements View.OnClickListener {
 
-//    List<RubbishInfo> data = new ArrayList<>();
+//    List<FileInfo> data = new ArrayList<>();
     private ListView lv;
     private ClearAdapter adapter;
     private TextView allFileSize;

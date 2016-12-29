@@ -311,4 +311,32 @@ public class FileManager {
     public List<FileInfo> getApkFile() {
         return apkFile;
     }
+
+    public void setZipFileSize(long zipFileSize) {
+        this.zipFileSize = zipFileSize;
+    }
+
+    public void setAllFileSize(long allFileSize) {
+        this.allFileSize = allFileSize;
+    }
+
+    public void setDocFileSize(long docFileSize) {
+        this.docFileSize = docFileSize;
+    }
+
+    public void setVideofFileSize(long videofFileSize) {
+        this.videofFileSize = videofFileSize;
+    }
+
+    public void setAudioFileSize(long audioFileSize) {
+        this.audioFileSize = audioFileSize;
+    }
+
+    public void setImageFileSize(long imageFileSize) {
+        this.imageFileSize = imageFileSize;
+    }
+
+    public void setApkFileSize(long apkFileSize) {
+        this.apkFileSize = apkFileSize;
+    }
 }

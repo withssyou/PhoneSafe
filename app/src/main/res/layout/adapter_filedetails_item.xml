@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:descendantFocusability="blocksDescendants">
+
+    <CheckBox
+        android:id="@+id/adapter_filedetails_item_ischeck_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/adapter_filedetails_item_icon_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/adapter_filedetails_item_ischeck_cb"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/adapter_filedetails_item_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/adapter_filedetails_item_icon_iv"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/adapter_filedetails_item_icon_iv"
+        android:text="name"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/adapter_filedetails_item_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/adapter_filedetails_item_icon_iv"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/adapter_filedetails_item_icon_iv"
+        android:text="name"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/adapter_fileDetails_item_size_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:text="00Kb"/>
+
+</RelativeLayout>

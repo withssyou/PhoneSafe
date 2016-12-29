@@ -49,11 +49,17 @@ public class ClearAdapter extends BaseBaseAdapter<AppRubish>{
         };
         holder.size.setText(info.getFileSize());
         holder.label.setText(info.getEnglishName());
+
+
+
         if (info.getIcon() != null) {
             holder.icon.setImageDrawable(info.getIcon());
         }else {
             holder.icon.setImageResource(R.mipmap.ic_launcher);
         }
+
+
+
         holder.isCheck.setChecked(info.ischeck());
         holder.isCheck.setOnClickListener(listener);
 

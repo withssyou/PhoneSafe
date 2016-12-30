@@ -59,7 +59,7 @@ public class FileActivity extends BaseActivity implements View.OnClickListener {
                     tv4.setText(Formatter.formatFileSize(FileActivity.this,fileManager.getAudioFileSize()));
                     tv5.setText(Formatter.formatFileSize(FileActivity.this,fileManager.getImageFileSize()));
                     tv6.setText(Formatter.formatFileSize(FileActivity.this,fileManager.getZipFileSize()));
-                    tv6.setText(Formatter.formatFileSize(FileActivity.this,fileManager.getApkFileSize()));
+                    tv7.setText(Formatter.formatFileSize(FileActivity.this,fileManager.getApkFileSize()));
                     //更改标记，使之退回时更改状态
                     showFlag = true;
                 }

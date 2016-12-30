@@ -2,4 +2,17 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--ListView的尺寸信息-->
+    <dimen name="item_height">60dp</dimen>
+    <dimen name="item_textsize">20sp</dimen>
+    <dimen name="item_margin">15dp</dimen>
+
+    <!--自定义shape的尺寸信息-->
+    <dimen name="shape_radius">1dp</dimen>
+    <dimen name="shape_shadow">5dp</dimen>
+
+    <!--ToggleButton的尺寸信息-->
+    <dimen name="togglebutton_height">24dp</dimen>
+    <dimen name="togglebutton_width">60dp</dimen>
+    <dimen name="togglebutton_margin">30dp</dimen>
 </resources>

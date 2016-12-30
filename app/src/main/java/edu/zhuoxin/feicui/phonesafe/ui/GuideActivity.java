@@ -36,6 +36,8 @@ public class GuideActivity extends BaseActivity implements View.OnClickListener,
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //能不能从Intent里面拿到之，如果能拿到值，
+//        getIntent();
         isFirstCome = getSharedPreferences("share",MODE_PRIVATE).getBoolean("isFirstCome",false);
         if (!isFirstCome){
             setContentView(R.layout.acitivity_guide);

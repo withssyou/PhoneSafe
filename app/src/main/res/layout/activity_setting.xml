@@ -3,13 +3,126 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ToggleButton
-        android:id="@+id/activity_setting_start_tb"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:layout_margin="20dp"
-        android:textOff=" "
-        android:textOn=" "
-        android:background="@drawable/togglebutton_off"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/item_margin"
+            android:text="开机启动"
+            android:textSize="@dimen/item_textsize"
+            />
+
+        <ToggleButton
+            android:id="@+id/activity_setting_start_tb"
+            android:layout_width="@dimen/togglebutton_width"
+            android:layout_height="@dimen/togglebutton_height"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="@dimen/togglebutton_margin"
+            android:background="@drawable/selector_togglebutton"
+            android:textOff=""
+            android:textOn=""/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/item_margin"
+            android:text="通知图标"
+            android:textSize="@dimen/item_textsize"
+            />
+
+        <ToggleButton
+            android:id="@+id/tb_notification"
+            android:layout_width="@dimen/togglebutton_width"
+            android:layout_height="@dimen/togglebutton_height"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="@dimen/togglebutton_margin"
+            android:background="@drawable/selector_togglebutton"
+            android:textOff=""
+            android:textOn=""/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/item_margin"
+            android:text="消息推送"
+            android:textSize="@dimen/item_textsize"
+            />
+
+        <ToggleButton
+            android:id="@+id/tb_push"
+            android:layout_width="@dimen/togglebutton_width"
+            android:layout_height="@dimen/togglebutton_height"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="@dimen/togglebutton_margin"
+            android:background="@drawable/selector_togglebutton"
+            android:textOff=""
+            android:textOn=""/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/item_margin"
+            android:text="帮助说明"
+            android:textSize="@dimen/item_textsize"
+            />
+
+        <ImageView
+            android:id="@+id/iv_help"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="@dimen/togglebutton_margin"
+            android:src="@drawable/icon_pressed"/>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/item_margin"
+            android:text="关于我们"
+            android:textSize="@dimen/item_textsize"
+            />
+
+        <ImageView
+            android:id="@+id/iv_about"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginRight="@dimen/togglebutton_margin"
+            android:src="@drawable/icon_pressed"/>
+    </FrameLayout>
 
 </LinearLayout>
